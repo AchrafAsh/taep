@@ -1,10 +1,11 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
+import Footer from '../components/Footer'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 const HeroSection = () => (
-    <div className='text-center flex flex-col space-y-12 items-center p-12 max-w-5xl mx-auto'>
+    <section className='text-center flex flex-col space-y-12 items-center p-20 max-w-5xl mx-auto'>
         <h1 className='text-5xl font-medium'>
             L’Excellence Académique de l’ENSTA Paris au service des entreprise
         </h1>
@@ -12,12 +13,12 @@ const HeroSection = () => (
             Un réseau de +300 étudiants brillants et dynamiques pour vous
             accompagner dans tous vos projets autour du secteur Naval.
         </p>
-        <Link>
+        <Link to='/contact'>
             <button className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
                 Présenter mon projet
             </button>
         </Link>
-    </div>
+    </section>
 )
 
 const BrandWall = () => (
@@ -25,17 +26,29 @@ const BrandWall = () => (
         <h2 className='my-8 text-4xl font-medium text-gray-400'>
             Les entreprises que nous avons déjà accompagnées
         </h2>
-        <StaticImage src='../images/brand_wall.png' />
+        <div>
+            <StaticImage src='../images/brand_wall.png' />
+        </div>
     </section>
 )
 
 const ContactSection = () => (
     <section className='flex flex-row space-x-12 max-w-3xl mx-auto my-24'>
-        <div className='bg-blue-900 p-8 shadow-2xl'>
+        <div className='bg-blue-1000 p-8 shadow-2xl'>
             <h3 className='text-3xl font-bold mb-4'>Contactez nous</h3>
-            <p className='mb-2'>taep@ensta-paris.fr</p>
-            <p>Linkedin</p>
+            <div className='flex flex-col space-y-4'>
+                <a target='_blank' href='mailto:taep@ensta-paris.fr'>
+                    taep@ensta-paris.fr
+                </a>
+                <a
+                    target='_blank'
+                    href='https://www.linkedin.com/company/taep-ensta-paris/'
+                >
+                    in/taep-ensta-paris
+                </a>
+            </div>
         </div>
+
         <div className='flex-1 text-black'>
             <h2 className='text-4xl font-bold mb-8'>À votre tour</h2>
             <form className='flex flex-col space-y-4'>
@@ -84,6 +97,7 @@ const IndexPage = () => {
                 <BrandWall />
                 <DemoSection />
                 <ContactSection />
+                <Footer />
             </div>
         </Layout>
     )

@@ -62,6 +62,7 @@ const CTAButtons = () => (
                 </svg>
             }
             text='Parler avec un administrateur'
+            onClick={() => {} /* should open a calendly modal to book a call */}
         />
         <Button
             svg={
@@ -81,16 +82,17 @@ const CTAButtons = () => (
                 </svg>
             }
             text='Présenter mon projet'
+            onClick={() => {} /* should redirect to form */}
         />
     </nav>
 )
 
 export default ({ children }) => {
     return (
-        <div className='bg-blue-900 text-white'>
+        <div className='bg-blue-1000 text-white'>
             <Navbar />
             <CTAButtons />
-            <main className=''>{children}</main>
+            <main>{children}</main>
         </div>
     )
 }
