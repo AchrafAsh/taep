@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Footer from '../components/Footer'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import Card from '../components/home/Card'
 
 const HeroSection = () => (
     <section className='text-center flex flex-col space-y-12 items-center p-20 max-w-5xl mx-auto'>
@@ -81,10 +82,34 @@ const ContactSection = () => (
 )
 
 const DemoSection = () => (
-    <section className='my-24 max-w-5xl mx-auto text-black'>
-        <div className='text-center'>
-            all the steps with a client from project definition to
-            statisfaction! 🎉
+    <section className='my-24 max-w-5xl mx-auto'>
+        <div className='py-24 flex flex-col space-y-60'>
+            <Card
+                number={1}
+                image='/demo/altaventure.png'
+                title='Votre projet'
+                text='“ Dans le cadre de l’accompagnement d’un client sur un de ses projets nous avions besoin de développer un modèle  d’architecture naval  pour la consommation d’énergie. Nous avons donc fait appel au savoir-faire des élèves de l’ENSTA Paris.“'
+            />
+            <Card
+                right
+                number={2}
+                image='/demo/pg.png'
+                title='Le consultant idéal'
+                text='Fort d’une césure chez Naval-Group, Pierre-Gwenäel connait parfaitement la culture du maritime. Il avait donc les ressources intellectuels et humaines pour accompagner notre client.'
+            />
+            <Card
+                number={3}
+                image='/demo/taep_team.png'
+                title='Un Chef de Projet qui vous accompagne'
+                text='Le rôle de notre chef de projet est de définir à vos côtés la méthodologie projet qui vous convient le mieux. De plus, il s’assurera que notre préstation réponde à vos besoins et vos exigences. C’est votre interlocuteur privilégié.'
+            />
+            <Card
+                right
+                number={4}
+                image='/demo/eric_pilat.png'
+                title='Votre satisfaction'
+                text='“ L’équipe de TAEP a su répondre à mon besoin. Ils ont étaient réactif du début à la fin et ont fait preuves d’initiatives pour surmonter les obstacles que nous avons rencontrés.”'
+            />
         </div>
     </section>
 )
