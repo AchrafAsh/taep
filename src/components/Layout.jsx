@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import SEO from './SEO'
 
 const Navbar = () => (
     <nav className='p-6 flex flex-row justify-between items-center'>
@@ -87,12 +88,15 @@ const CTAButtons = () => (
     </nav>
 )
 
-export default ({ children }) => {
+export default function Layout({ title, children }) {
     return (
-        <div className='bg-blue-1000 text-white'>
-            <Navbar />
-            <CTAButtons />
-            <main>{children}</main>
-        </div>
+        <>
+            <SEO title={title} />
+            <div className='bg-blue-1000 text-white'>
+                <Navbar />
+                <CTAButtons />
+                <main>{children}</main>
+            </div>
+        </>
     )
 }
