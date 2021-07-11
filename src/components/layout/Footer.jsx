@@ -34,7 +34,7 @@ const Footer = () => {
 
     return (
         <footer className='mt-32 w-full relative flex flex-row overflow-hidden'>
-            <div className='absolute z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            <div className='hidden sm:block absolute z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <span
                     className='text-5xl font-bold uppercase text-white'
                     style={{ textShadow: '0px 0px 3px white' }}
@@ -42,21 +42,30 @@ const Footer = () => {
                     {title}
                 </span>
             </div>
-
-            {specialties.map((spec) => (
-                <Link className='w-full' key={spec.id} to={`/${spec.name}`}>
-                    <div
-                        className='relative flex-1 bg-blue transition transform hover:scale-150'
-                        onMouseEnter={() => setTitle(spec.name)}
-                    >
-                        <div className='absolute bg-gray-50 inset-0 z-10 opacity-25' />
+            <div className='w-full flex flex-col sm:flex-row'>
+                {specialties.map((spec) => (
+                    <Link className='w-full' key={spec.id} to={`/${spec.name}`}>
                         <div
-                            className='w-full h-screen bg-cover bg-center bg-no-repeat'
-                            style={{ backgroundImage: `url(${spec.image}) ` }}
-                        />
-                    </div>
-                </Link>
-            ))}
+                            className='relative flex-1 bg-blue transition sm:transform hover:scale-150'
+                            onMouseEnter={() => setTitle(spec.name)}
+                        >
+                            <div className='absolute bg-gray-50 inset-0 z-10 opacity-25' />
+                            <div
+                                className='w-full h-40 sm:h-screen bg-cover bg-center bg-no-repeat'
+                                style={{
+                                    backgroundImage: `url(${spec.image}) `
+                                }}
+                            />
+                            <div
+                                style={{ textShadow: '0px 0px 2px white' }}
+                                className='p-4 absolute inset-0 z-20 font-bold text-white text-3xl uppercase sm:hidden'
+                            >
+                                {spec.name}
+                            </div>
+                        </div>
+                    </Link>
+                ))}
+            </div>
         </footer>
     )
 }

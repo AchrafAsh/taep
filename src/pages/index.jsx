@@ -6,7 +6,7 @@ import Card from '../components/home/Card'
 import ContactSection from '../components/ContactForm'
 
 const HeroSection = () => (
-    <section className='text-center flex flex-col space-y-12 items-center p-20 max-w-5xl mx-auto'>
+    <section className='text-center flex flex-col space-y-12 items-center px-4 py-12 sm:p-20 max-w-5xl mx-auto'>
         <h1 className='text-white'>
             L’Excellence Académique de l’ENSTA Paris au service des entreprise
         </h1>
@@ -23,11 +23,11 @@ const HeroSection = () => (
 )
 
 const BrandWall = () => (
-    <section className='p-12 text-center flex flex-col space-y-4 max-w-5xl mx-auto'>
-        <h2 className='my-8 text-4xl font-medium text-gray-400'>
+    <section className='p-4 sm:p-12 text-center flex flex-col space-y-4 max-w-5xl mx-auto'>
+        <h2 className='my-8 text-gray-400'>
             Les entreprises que nous avons déjà accompagnées
         </h2>
-        <div>
+        <div className='w-full'>
             <StaticImage src='../images/brand_wall.png' />
         </div>
     </section>
@@ -35,7 +35,7 @@ const BrandWall = () => (
 
 const DemoSection = () => (
     <section className='my-24 max-w-5xl mx-auto'>
-        <div className='py-24 flex flex-col space-y-60'>
+        <div className='py-24 flex flex-col space-y-40 sm:space-y-60'>
             <Card
                 number={1}
                 image='/demo/altaventure.png'
@@ -70,7 +70,7 @@ const IndexPage = () => {
     return (
         <Layout title="TAEP La Junior Entreprise de l'ENSTA Paris">
             <HeroSection />
-            <div className='bg-white'>
+            <div className='bg-white w-full'>
                 <BrandWall />
                 <DemoSection />
                 <ContactSection />

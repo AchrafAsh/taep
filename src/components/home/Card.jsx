@@ -4,16 +4,16 @@ import { StaticImage } from 'gatsby-plugin-image'
 export default function Card({ image, title, text, number, right }) {
     return (
         <div
-            className={`relative max-w-xl mx-auto bg-gray-50 flex ${
+            className={`relative p-8 max-w-xl mx-auto bg-gray-50 flex items-end ${
                 right ? 'flex-row-reverse' : 'flex-row'
-            } items-end p-8`}
+            }`}
         >
-            <div>
+            <div className='hidden sm:block'>
                 <span className='text-8xl font-bold text-gray-200'>
                     {number}.
                 </span>
             </div>
-            <div className={`max-w-sm ${right ? 'mr-10' : 'ml-10'}`}>
+            <div className={`max-w-sm sm:${right ? 'mr-10' : 'ml-10'}`}>
                 <h3
                     className={`text-2xl font-semibold text-${
                         right ? 'left' : 'right'
@@ -25,11 +25,11 @@ export default function Card({ image, title, text, number, right }) {
             </div>
 
             <img
-                className={`absolute top-0 w-40 transform ${
+                className={`absolute sm:block top-0 h-32 sm:h-40 transform ${
                     right
-                        ? 'right-0 translate-x-1/3'
-                        : 'left-0 -translate-x-1/3'
-                } -translate-y-2/3`}
+                        ? 'sm:right-0 sm:translate-x-1/3'
+                        : 'sm:left-0 sm:-translate-x-1/3'
+                } -translate-y-28 sm:-translate-y-2/3`}
                 alt={title}
                 src={image}
             />

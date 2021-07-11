@@ -2,8 +2,8 @@ import * as React from 'react'
 
 export default function ContactForm() {
     return (
-        <section className='flex flex-row space-x-12 max-w-3xl mx-auto my-24'>
-            <div className='bg-blue-1000 p-8 shadow-2xl text-white'>
+        <section className='px-6 sm:p-0 flex flex-row sm:space-x-12 max-w-3xl mx-auto my-24'>
+            <div className='hidden sm:block bg-blue-1000 p-8 shadow-2xl text-white'>
                 <h3 className='text-3xl font-bold mb-4'>Contactez nous</h3>
                 <div className='flex flex-col space-y-4'>
                     <a target='_blank' href='mailto:taep@ensta-paris.fr'>

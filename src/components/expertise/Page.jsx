@@ -6,7 +6,7 @@ import { ConsultantCard } from '.'
 const Arrow = () => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
-        className='w-32'
+        className='hidden sm:block w-32'
         fill='none'
         viewBox='0 0 24 24'
         stroke='currentColor'
@@ -35,7 +35,7 @@ const CommentCaMarche = () => (
         <h2 className='text-4xl font-bold text-center mb-4'>
             Comment ca marche
         </h2>
-        <div className='py-10 flex flex-row items-center space-x-8'>
+        <div className='w-full px-4 py-10 flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-8'>
             <Step
                 number={1}
                 title='Step 1'
@@ -77,7 +77,7 @@ export default function Page({
                     }}
                 >
                     <Navbar />
-                    <div className='max-w-4xl mx-auto text-center p-20'>
+                    <div className='max-w-4xl mx-auto text-center px-4 py-12 sm:p-20'>
                         <h1 className='text-white mb-8'>{title}</h1>
                         <p className='text-lg text-white'>{subtitle}</p>
                         <button className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
@@ -91,7 +91,7 @@ export default function Page({
                 <h2 className='text-4xl font-bold mb-4 text-center'>
                     Les spécialités
                 </h2>
-                <div className='flex flex-row space-x-10 py-8'>
+                <div className='flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:space-x-10 px-4 py-8'>
                     {specialities &&
                         specialities.map((spec, idx) => (
                             <div
@@ -101,7 +101,7 @@ export default function Page({
                                 <img
                                     src={spec.image}
                                     alt={spec.title}
-                                    className='w-32 h-32'
+                                    className='w-24 sm:w-32 h-24 sm:h-32'
                                 />
                                 <h4 className='font-semibold'>{spec.title}</h4>
                                 <p>{spec.description}</p>
@@ -111,8 +111,8 @@ export default function Page({
             </section>
 
             <section className='my-24 max-w-5xl mx-auto'>
-                <div className='flex flex-row space-x-20'>
-                    <div className='max-w-md flex flex-col space-y-4'>
+                <div className='flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-8'>
+                    <div className='max-w-md flex flex-col space-y-4 px-4'>
                         <h2>Nos consultants</h2>
                         <p>
                             L'ENSTA Paris consacre l'une des 3 majeures du
@@ -127,7 +127,7 @@ export default function Page({
                             mathématiques. (Classement Le Figaro Etudiant 2021).
                         </p>
                     </div>
-                    <div className='w-1/2 grid grid-cols-3 gap-4'>
+                    <div className='p-4 flex-1 flex flex-row space-x-4 sm:space-x-0 overflow-x-auto sm:grid grid-cols-3 gap-4'>
                         <ConsultantCard
                             image='/demo/pg.png'
                             name='Pierre Gwenael'

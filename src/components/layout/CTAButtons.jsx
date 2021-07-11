@@ -21,7 +21,7 @@ const Button = ({ text, svg }) => {
 
 export default function CTAButtons() {
     return (
-        <nav className='fixed right-0 top-1/2 text-black p-4 flex flex-col items-end space-y-4'>
+        <nav className='fixed z-10 right-0 bottom-0 sm:top-1/2 text-black p-4 flex flex-col items-end space-y-4'>
             <Button
                 svg={
                     <svg

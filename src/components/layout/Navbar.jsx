@@ -33,7 +33,7 @@ const Dropdown = ({ options, title }) => {
 
 export default function Navbar() {
     return (
-        <nav className='p-6 flex flex-row justify-between items-center'>
+        <nav className='p-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between items-center'>
             <div>
                 <Link to='/'>
                     <StaticImage
