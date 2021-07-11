@@ -35,7 +35,12 @@ const Footer = () => {
     return (
         <footer className='mt-32 w-full relative flex flex-row overflow-hidden'>
             <div className='absolute z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                <span className='text-5xl font-bold uppercase'>{title}</span>
+                <span
+                    className='text-5xl font-bold uppercase text-white'
+                    style={{ textShadow: '0px 0px 3px white' }}
+                >
+                    {title}
+                </span>
             </div>
 
             {specialties.map((spec) => (

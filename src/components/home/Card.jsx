@@ -15,13 +15,13 @@ export default function Card({ image, title, text, number, right }) {
             </div>
             <div className={`max-w-sm ${right ? 'mr-10' : 'ml-10'}`}>
                 <h3
-                    className={`text-2xl font-semibold text-gray-800 text-${
+                    className={`text-2xl font-semibold text-${
                         right ? 'left' : 'right'
                     } mb-4`}
                 >
                     {title}
                 </h3>
-                <p className='text-gray-600'>{text}</p>
+                <p>{text}</p>
             </div>
 
             <img

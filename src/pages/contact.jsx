@@ -1,6 +1,7 @@
+import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import * as React from 'react'
+import { InlineWidget } from 'react-calendly'
 
 const ContactPage = () => (
     <main className='h-screen flex flex-row'>
@@ -31,7 +32,7 @@ const ContactPage = () => (
 
             <div className='mt-24'>
                 <Link to='/'>
-                    <StaticImage src='../images/logo.png' />
+                    <StaticImage src='../images/logo.png' alt='TAEP' />
                 </Link>
             </div>
         </section>
@@ -83,22 +84,12 @@ const ContactPage = () => (
                 <hr className='bg-gray-300 flex-1' />
             </div>
 
-            <div>
-                <h1 className='text-4xl font-bold text-blue-1000 mb-8'>
+            <div className='w-full max-w-5xl'>
+                <h1 className='text-4xl text-center font-bold text-blue-1000 mb-8'>
                     Réservez un appel
                 </h1>
                 {/* Calendly inline widget begin */}
-                <div
-                    class='calendly-inline-widget'
-                    data-url='https://calendly.com/aitsidihammou-achraf'
-                    className='w-full'
-                    style={{ minWidth: '320px', height: '630px' }}
-                ></div>
-                <script
-                    type='text/javascript'
-                    src='https://assets.calendly.com/assets/external/widget.js'
-                    async
-                ></script>
+                <InlineWidget url='https://calendly.com/aitsidihammou-achraf' />
                 {/* Calendly inline widget end */}
             </div>
         </section>
