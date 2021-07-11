@@ -24,15 +24,13 @@ const specialties = [
     },
     {
         id: 4,
-        name: 'dev',
+        name: 'developpement',
         image: 'https://images.unsplash.com/photo-1536148935331-408321065b18?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80'
     }
 ]
 
 const Footer = () => {
     const [title, setTitle] = React.useState('')
-
-    // add logic to set the title on hovering an image
 
     return (
         <footer className='mt-32 w-full relative flex flex-row overflow-hidden'>
@@ -41,9 +39,9 @@ const Footer = () => {
             </div>
 
             {specialties.map((spec) => (
-                <Link key={spec.id} to='/'>
+                <Link className='w-full' key={spec.id} to={`/${spec.name}`}>
                     <div
-                        className='relative flex-1 bg-blue transform hover:scale-150'
+                        className='relative flex-1 bg-blue transition transform hover:scale-150'
                         onMouseEnter={() => setTitle(spec.name)}
                     >
                         <div className='absolute bg-gray-50 inset-0 z-10 opacity-25' />
