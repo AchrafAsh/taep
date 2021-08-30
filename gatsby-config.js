@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://www.yourdomain.tld',
-        title: 'new-website'
+        siteUrl: 'https://www.taep.fr',
+        title: 'TAEP'
     },
     plugins: [
         {

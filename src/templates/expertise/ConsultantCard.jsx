@@ -1,10 +1,13 @@
 import * as React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 export default function ConsultantCard({ image, name, link }) {
+    const picture = getImage(image)
+
     return (
-        <div className='flex flex-col shadow-lg w-max'>
+        <div className='flex flex-col shadow-lg w-min'>
             <div className='w-40 h-40'>
-                <img src={image} alt={name} className='' />
+                <GatsbyImage image={picture} title={name} alt={name} />
             </div>
 
             <div className='bg-white w-full flex flex-col space-y-2 p-4'>

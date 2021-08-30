@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 const Dropdown = ({ options, title }) => {
     const [visible, setVisible] = React.useState(false)
@@ -32,13 +32,25 @@ const Dropdown = ({ options, title }) => {
 }
 
 export default function Navbar() {
+    const { pages } = useStaticQuery(graphql`
+        query {
+            pages: allContentfulExpertise {
+                edges {
+                    node {
+                        name
+                    }
+                }
+            }
+        }
+    `)
+
     return (
         <nav className='p-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between items-center'>
             <div>
                 <Link to='/'>
                     <StaticImage
                         height={60}
-                        src='../images/logo.png'
+                        src='../../images/logo.png'
                         alt='TAEP'
                         title='TAEP'
                     />
@@ -48,13 +60,10 @@ export default function Navbar() {
                 <li>
                     <Dropdown
                         title='Spécialités'
-                        options={[
-                            { title: 'Maritime', link: '/maritime' },
-                            { title: 'Data', link: '/data' },
-                            { title: 'Energie', link: '/energie' },
-                            { title: 'Développement', link: '/developpement' },
-                            { title: 'Transport', link: '/transport' }
-                        ]}
+                        options={pages.edges.map(({ node: { name } }) => ({
+                            title: capitalize(name),
+                            link: `/${name.toLowerCase()}`
+                        }))}
                     />
                 </li>
                 <li>
@@ -63,4 +72,8 @@ export default function Navbar() {
             </ul>
         </nav>
     )
+}
+
+function capitalize(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase()
 }
