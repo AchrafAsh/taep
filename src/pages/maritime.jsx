@@ -22,6 +22,58 @@ const specialities = [
     }
 ]
 
+const examples = [
+    {
+        title: 'Dimensionnement d’une plateforme offshore de panneaux solaire',
+        image: '/panneau_offshore.jpg',
+        description:
+            'Identification des critères de résistance pour la structure offshore\nRéalisation d’un tableur de pré-dimensionnement de prototype',
+        tag: 'maritime',
+        link: '/'
+    },
+    {
+        title: 'Étude de faisabilité de bouées à positionnement dynamique pour un parcours de régate',
+        image: '/boue_positionnement.jpeg',
+        description:
+            'Identification des critères de résistance pour la structure offshore\nRéalisation d’un tableur de pré-dimensionnement de prototype',
+        tag: 'maritime',
+        link: '/'
+    }
+]
+
+const consultants = [
+    {
+        image: '/demo/pg.png',
+        name: 'Pierre Gwenael',
+        link: 'https://linkedin.com'
+    },
+    {
+        image: '/demo/pg.png',
+        name: 'Pierre Gwenael',
+        link: 'https://linkedin.com'
+    },
+    {
+        image: '/demo/pg.png',
+        name: 'Pierre Gwenael',
+        link: 'https://linkedin.com'
+    },
+    {
+        image: '/demo/pg.png',
+        name: 'Pierre Gwenael',
+        link: 'https://linkedin.com'
+    },
+    {
+        image: '/demo/pg.png',
+        name: 'Pierre Gwenael',
+        link: 'https://linkedin.com'
+    },
+    {
+        image: '/demo/pg.png',
+        name: 'Pierre Gwenael',
+        link: 'https://linkedin.com'
+    }
+]
+
 export default function Expertise() {
     return (
         <Page
@@ -29,6 +81,8 @@ export default function Expertise() {
             title='Donner du sens à nos données'
             subtitle='Sous-titre / description générique avec élément correspondant à la spécialité.'
             specialities={specialities}
+            examples={examples}
+            consultants={consultants}
         >
             Hello
         </Page>

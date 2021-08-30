@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ContactForm from '../ContactForm'
-import { Navbar, Footer, SEO } from '../layout'
+import { Navbar, Footer, SEO, CTAButtons } from '../layout'
 import { ConsultantCard } from '.'
 
 const Arrow = () => (
@@ -57,11 +57,135 @@ const CommentCaMarche = () => (
     </section>
 )
 
+const CaseStudy = ({ image, title, description, tag, link }) => (
+    <div className='container mx-auto my-5'>
+        <div className='relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl mx-2 md:h-96 lg:h-80'>
+            <div className='z-0 order-1 md:order-2 relative w-full md:w-2/5 h-80 md:h-full overflow-hidden rounded-lg md:rounded-none md:rounded-r-lg'>
+                <div
+                    className='absolute inset-0 w-full h-full object-fill object-center bg-blue-400 bg-opacity-30 bg-cover bg-bottom'
+                    style={{
+                        backgroundImage: `url( ${image} )`,
+                        backgroundBlendMode: 'multiply'
+                    }}
+                />
+
+                <div className='md:hidden absolute inset-0 h-full p-6 pb-6 flex flex-col-reverse justify-start items-start bg-gradient-to-b from-transparent via-transparent to-gray-900'>
+                    <h3 className='w-full font-bold text-2xl text-white leading-tight mb-2'>
+                        {title}
+                    </h3>
+                    <span className='text-sm uppercase text-gray-100 leading-tight'>
+                        {tag}
+                    </span>
+                </div>
+                <svg
+                    className='hidden md:block absolute inset-y-0 h-full w-24 fill-current text-white -ml-12'
+                    viewBox='0 0 100 100'
+                    preserveAspectRatio='none'
+                >
+                    <polygon points='50,0 100,0 50,100 0,100' />
+                </svg>
+            </div>
+
+            <div className='z-10 order-2 md:order-1 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0'>
+                <div className='p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none flex flex-col'>
+                    <span className='hidden md:block text-sm uppercase text-gray-400'>
+                        {tag}
+                    </span>
+                    <h3 className='hidden md:block font-bold text-2xl text-gray-700 mb-2'>
+                        {title}
+                    </h3>
+
+                    <div className='flex-1'>
+                        {description.split('\n').map((text, i) => (
+                            <p className='text-gray-400' key={i}>
+                                {text}
+                            </p>
+                        ))}
+                    </div>
+
+                    <a
+                        className='flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900'
+                        href={link}
+                    >
+                        <span>En savoir plus</span>
+                        <span className='text-xs ml-1'>&#x279c;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+)
+
+const Carousel = ({ children }) => {
+    const slides = children.length || 1
+    const [activeIndex, setActiveIndex] = React.useState(0)
+
+    function slideBack() {
+        if (activeIndex === 0) return
+        setActiveIndex(activeIndex - 1)
+    }
+
+    function slideForward() {
+        if (activeIndex === slides - 1) return
+        setActiveIndex(activeIndex + 1)
+    }
+
+    return (
+        <div className='relative'>
+            {activeIndex === 0 ? null : (
+                <div
+                    onClick={slideBack}
+                    className='absolute z-50 left-0 top-1/2 transform -translate-y-full -translate-x-1/4 bg-white rounded-full flex items-center justify-center w-8 h-8 border border-gray-100 shadow cursor-pointer'
+                >
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='w-4 transform rotate-180'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                    >
+                        <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth={2}
+                            d='M14 5l7 7m0 0l-7 7m7-7H3'
+                        />
+                    </svg>
+                </div>
+            )}
+            {activeIndex === slides - 1 ? null : (
+                <div
+                    onClick={slideForward}
+                    className='absolute z-50 right-0 top-1/2 transform -translate-y-full translate-x-1/4 bg-white rounded-full flex items-center justify-center w-8 h-8 border border-gray-100 shadow cursor-pointer'
+                >
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='w-4'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                    >
+                        <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth={2}
+                            d='M14 5l7 7m0 0l-7 7m7-7H3'
+                        />
+                    </svg>
+                </div>
+            )}
+            {children[activeIndex]}
+        </div>
+    )
+}
+
 export default function Page({
     backgroundImage,
     title,
     subtitle,
-    specialities
+    consultants,
+    specialities,
+    examples
 }) {
     return (
         <>
@@ -113,7 +237,7 @@ export default function Page({
             <section className='my-24 max-w-5xl mx-auto'>
                 <div className='flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-8'>
                     <div className='max-w-md flex flex-col space-y-4 px-4'>
-                        <h2>Nos consultants</h2>
+                        <h2 className='mb-8'>Nos consultants</h2>
                         <p>
                             L'ENSTA Paris consacre l'une des 3 majeures du
                             cursus ingénieur ENSTA à l'Informatique (filière
@@ -128,36 +252,15 @@ export default function Page({
                         </p>
                     </div>
                     <div className='p-4 flex-1 flex flex-row space-x-4 sm:space-x-0 overflow-x-auto sm:grid grid-cols-3 gap-4'>
-                        <ConsultantCard
-                            image='/demo/pg.png'
-                            name='Pierre Gwenael'
-                            link='https://linkedin.com'
-                        />
-                        <ConsultantCard
-                            image='/demo/pg.png'
-                            name='Pierre Gwenael'
-                            link='https://linkedin.com'
-                        />
-                        <ConsultantCard
-                            image='/demo/pg.png'
-                            name='Pierre Gwenael'
-                            link='https://linkedin.com'
-                        />
-                        <ConsultantCard
-                            image='/demo/pg.png'
-                            name='Pierre Gwenael'
-                            link='https://linkedin.com'
-                        />
-                        <ConsultantCard
-                            image='/demo/pg.png'
-                            name='Pierre Gwenael'
-                            link='https://linkedin.com'
-                        />
-                        <ConsultantCard
-                            image='/demo/pg.png'
-                            name='Pierre Gwenael'
-                            link='https://linkedin.com'
-                        />
+                        {consultants &&
+                            consultants.map((item, i) => (
+                                <ConsultantCard
+                                    key={i}
+                                    image={item.image}
+                                    name={item.name}
+                                    link={item.link}
+                                />
+                            ))}
                     </div>
                 </div>
             </section>
@@ -168,9 +271,25 @@ export default function Page({
                 <h2 className='text-4xl font-bold text-center mb-4'>
                     Nos plus belles études
                 </h2>
-                <p className='text-center'>coming soon</p>
+                <div className='px-6'>
+                    {examples && examples.length > 0 && (
+                        <Carousel>
+                            {examples.map((example, i) => (
+                                <CaseStudy
+                                    key={i}
+                                    image={example.image}
+                                    title={example.title}
+                                    description={example.description}
+                                    tag={example.tag}
+                                    link={example.link}
+                                />
+                            ))}
+                        </Carousel>
+                    )}
+                </div>
             </section>
 
+            <CTAButtons />
             <ContactForm />
             <Footer />
         </>
