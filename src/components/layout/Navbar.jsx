@@ -6,7 +6,7 @@ const Dropdown = ({ options, title }) => {
     const [visible, setVisible] = React.useState(false)
 
     return (
-        <div>
+        <div className='cursor-pointer'>
             <span
                 className='select-none relative'
                 onMouseEnter={() => setVisible(true)}
@@ -17,11 +17,15 @@ const Dropdown = ({ options, title }) => {
             {visible && (
                 <div
                     onMouseLeave={() => setVisible(false)}
-                    className='absolute flex flex-col space-y-2 py-4'
+                    className='absolute flex flex-col mt-2 py-1 rounded shadow-xl bg-white'
                 >
                     {options &&
                         options.map((option, index) => (
-                            <Link key={index} to={option.link}>
+                            <Link
+                                key={index}
+                                to={option.link}
+                                className='py-2 px-4 hover:bg-gray-100 text-black font-light'
+                            >
                                 {option.title}
                             </Link>
                         ))}
@@ -35,11 +39,7 @@ export default function Navbar() {
     const { pages } = useStaticQuery(graphql`
         query {
             pages: allContentfulExpertise {
-                edges {
-                    node {
-                        name
-                    }
-                }
+                distinct(field: name)
             }
         }
     `)
@@ -60,7 +60,7 @@ export default function Navbar() {
                 <li>
                     <Dropdown
                         title='Spécialités'
-                        options={pages.edges.map(({ node: { name } }) => ({
+                        options={pages.distinct.map((name) => ({
                             title: capitalize(name),
                             link: `/${name.toLowerCase()}`
                         }))}

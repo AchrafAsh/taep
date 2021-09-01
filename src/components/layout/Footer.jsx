@@ -1,36 +1,30 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-
-const specialties = [
-    {
-        id: 0,
-        name: 'maritime',
-        image: 'https://images.unsplash.com/photo-1598193957011-39b9f2916992?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-    },
-    {
-        id: 1,
-        name: 'data',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-    },
-    {
-        id: 2,
-        name: 'energie',
-        image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-    },
-    {
-        id: 3,
-        name: 'transport',
-        image: 'https://images.unsplash.com/photo-1473042904451-00171c69419d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1075&q=80'
-    },
-    {
-        id: 4,
-        name: 'developpement',
-        image: 'https://images.unsplash.com/photo-1536148935331-408321065b18?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80'
-    }
-]
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Footer = () => {
     const [title, setTitle] = React.useState('')
+
+    const { pages } = useStaticQuery(graphql`
+        query {
+            pages: allContentfulExpertise(
+                filter: { node_locale: { eq: "en-US" } }
+            ) {
+                edges {
+                    node {
+                        backgroundImage {
+                            gatsbyImageData(
+                                height: 2000
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP]
+                            )
+                        }
+                        name
+                    }
+                }
+            }
+        }
+    `)
 
     return (
         <footer className='mt-32 w-full relative flex flex-row overflow-hidden'>
@@ -43,30 +37,69 @@ const Footer = () => {
                 </span>
             </div>
             <div className='w-full flex flex-col sm:flex-row'>
-                {specialties.map((spec) => (
-                    <Link className='w-full' key={spec.id} to={`/${spec.name}`}>
-                        <div
-                            className='relative flex-1 bg-blue transition sm:transform hover:scale-150'
-                            onMouseEnter={() => setTitle(spec.name)}
-                        >
-                            <div className='absolute bg-gray-50 inset-0 z-10 opacity-25' />
-                            <div
-                                className='w-full h-40 sm:h-screen bg-cover bg-center bg-no-repeat'
-                                style={{
-                                    backgroundImage: `url(${spec.image}) `
-                                }}
-                            />
-                            <div
-                                style={{ textShadow: '0px 0px 2px white' }}
-                                className='p-4 absolute inset-0 z-20 font-bold text-white text-3xl uppercase sm:hidden'
-                            >
-                                {spec.name}
-                            </div>
-                        </div>
-                    </Link>
+                {pages.edges.map(({ node }, index) => (
+                    // <Link className='w-full' key={spec.id} to={`/${spec.name}`}>
+                    //     <div
+                    //         className='relative flex-1 bg-blue transition sm:transform hover:scale-150'
+                    //         onMouseEnter={() => setTitle(spec.name)}
+                    //     >
+                    //         <div className='absolute bg-gray-50 inset-0 z-10 opacity-25' />
+                    //         <div
+                    //             className='w-full h-40 sm:h-screen bg-cover bg-center bg-no-repeat'
+                    //             style={{
+                    //                 backgroundImage: `url(${spec.image}) `
+                    //             }}
+                    //         />
+                    //         <div
+                    //             style={{ textShadow: '0px 0px 2px white' }}
+                    //             className='p-4 absolute inset-0 z-20 font-bold text-white text-3xl uppercase sm:hidden'
+                    //         >
+                    //             {spec.name}
+                    //         </div>
+                    //     </div>
+                    // </Link>
+                    <Fold
+                        key={index}
+                        backgroundImage={node.backgroundImage}
+                        name={node.name}
+                        setTitle={setTitle}
+                    />
                 ))}
             </div>
         </footer>
+    )
+}
+
+const Fold = ({ backgroundImage, name, setTitle }) => {
+    backgroundImage = getImage(backgroundImage)
+    return (
+        <Link className='w-full' to={`/${name}`}>
+            <div
+                className='relative flex-1 bg-blue transition sm:transform hover:scale-150'
+                onMouseEnter={() => setTitle(name)}
+            >
+                <div className='absolute bg-gray-50 inset-0 z-10 opacity-25' />
+                <div
+                    className='w-full h-40 sm:h-screen'
+                    // style={{
+                    //     backgroundImage: `url(${spec.image}) `
+                    // }}
+                >
+                    <GatsbyImage
+                        image={backgroundImage}
+                        title={name}
+                        alt={name}
+                        className='w-full h-full'
+                    />
+                </div>
+                <div
+                    style={{ textShadow: '0px 0px 2px white' }}
+                    className='p-4 absolute inset-0 z-20 font-bold text-white text-3xl uppercase sm:hidden'
+                >
+                    {name}
+                </div>
+            </div>
+        </Link>
     )
 }
 

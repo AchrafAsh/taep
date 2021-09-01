@@ -110,7 +110,7 @@ const CaseStudy = ({ image, title, description, tag, link }) => {
                         </div>
 
                         <a
-                            className='flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900'
+                            className='flex items-baseline mt-3 text-yellow-300 hover:text-blue-900 focus:text-blue-900'
                             href={link}
                         >
                             <span>En savoir plus</span>
@@ -200,8 +200,8 @@ const Page = ({
         <>
             <SEO title={header} />
             <section
-                className='relative bg-no-repeat bg-bottom bg-cover bg-fixed'
-                // style={{ backgroundImage: `url(${backgroundImage})` }}
+            // className='relative bg-no-repeat bg-bottom bg-cover bg-fixed'
+            // style={{ backgroundImage: `url(${backgroundImage})` }}
             >
                 <BgImage image={image} alt={header}>
                     <div
@@ -348,7 +348,7 @@ export const query = graphql`
         expertise: contentfulExpertise(name: { eq: $slug }) {
             backgroundImage {
                 gatsbyImageData(
-                    height: 1000
+                    height: 2000
                     placeholder: BLURRED
                     formats: [AUTO, WEBP]
                 )
@@ -359,7 +359,7 @@ export const query = graphql`
                 title
                 image {
                     gatsbyImageData(
-                        width: 400
+                        width: 600
                         placeholder: BLURRED
                         formats: [AUTO, WEBP]
                     )
@@ -369,7 +369,7 @@ export const query = graphql`
             consultants {
                 image {
                     gatsbyImageData(
-                        width: 400
+                        width: 600
                         placeholder: BLURRED
                         formats: [AUTO, WEBP]
                     )
