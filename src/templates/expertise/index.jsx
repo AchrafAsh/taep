@@ -25,7 +25,7 @@ const Arrow = () => (
 )
 
 const Step = ({ number, title, text }) => (
-    <div className='flex flex-col items-center space-y-4 text-center'>
+    <div className='w-full flex flex-col items-center space-y-4 text-center'>
         <span className='text-4xl flex justify-center items-center font-semibold border border-black rounded-full w-24 h-24'>
             {number}
         </span>
@@ -39,23 +39,23 @@ const CommentCaMarche = () => (
         <h2 className='text-4xl font-bold text-center mb-4'>
             Comment ca marche
         </h2>
-        <div className='w-full px-4 py-10 flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-8'>
+        <div className='w-full px-4 py-10 flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:space-x-8'>
             <Step
                 number={1}
-                title='Step 1'
-                text="Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                title='Votre Projet'
+                text='Parlez nous de votre projet, les enjeux, les objectifs et vos besoins.'
             />
             <Arrow />
             <Step
                 number={2}
-                title='Step 2'
-                text="Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                title='Notre Solution'
+                text='Dans les plus brefs délai, vous recevez une proposition détaillée: consultant, budget, délai et livrables'
             />
             <Arrow />
             <Step
                 number={3}
-                title='Step 3'
-                text="Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                title='Votre Satisfaction'
+                text="Vous êtes accompagné tout au long du projet pour s'assurer du bon déroulement de la mission."
             />
         </div>
     </section>

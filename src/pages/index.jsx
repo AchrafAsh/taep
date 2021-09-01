@@ -3,7 +3,7 @@ import { Layout, Footer } from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import Card from '../components/home/Card'
-import ContactSection from '../components/ContactForm'
+import ContactForm from '../components/ContactForm'
 
 const HeroSection = () => (
     <section className='text-center flex flex-col space-y-12 items-center px-4 py-12 sm:p-20 max-w-5xl mx-auto'>
@@ -73,7 +73,7 @@ const IndexPage = () => {
             <div className='bg-white w-full'>
                 <BrandWall />
                 <DemoSection />
-                <ContactSection />
+                <ContactForm />
                 <Footer />
             </div>
         </Layout>
