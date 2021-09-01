@@ -15,8 +15,8 @@ export default function Card({ image, title, text, number, right }) {
             </div>
             <div className={`max-w-sm sm:${right ? 'mr-10' : 'ml-10'}`}>
                 <h3
-                    className={`text-2xl font-semibold text-${
-                        right ? 'left' : 'right'
+                    className={`text-2xl font-semibold ${
+                        right ? 'text-left' : 'text-right'
                     } mb-4`}
                 >
                     {title}
