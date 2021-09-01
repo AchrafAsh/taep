@@ -53,6 +53,7 @@ export default function Navbar() {
                         src='../../images/logo.png'
                         alt='TAEP'
                         title='TAEP'
+                        placeholder='blurred'
                     />
                 </Link>
             </div>

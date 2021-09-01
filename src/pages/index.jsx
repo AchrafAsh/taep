@@ -28,7 +28,11 @@ const BrandWall = () => (
             Les entreprises que nous avons déjà accompagnées
         </h2>
         <div className='w-full'>
-            <StaticImage src='../images/brand_wall.png' alt='Entreprises' />
+            <StaticImage
+                src='../images/brand_wall.png'
+                alt='Entreprises'
+                placeholder='blurred'
+            />
         </div>
     </section>
 )
