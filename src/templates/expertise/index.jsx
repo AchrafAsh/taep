@@ -35,7 +35,7 @@ const Step = ({ number, title, text }) => (
 )
 
 const CommentCaMarche = () => (
-    <section className='my-24 max-w-5xl mx-auto'>
+    <section className='my-24 px-6 max-w-5xl mx-auto'>
         <h2 className='text-4xl font-bold text-center mb-4'>
             Comment ca marche
         </h2>
@@ -226,23 +226,23 @@ const Page = ({
                 <h2 className='text-4xl font-bold mb-4 text-center'>
                     Les spécialités
                 </h2>
-                <div className='flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:space-x-10 px-4 py-8'>
+                <div className='flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:space-x-10 px-6 py-8'>
                     {skills &&
                         skills.map((item, idx) => {
                             const image = getImage(item.image)
                             return (
                                 <div
                                     key={idx}
-                                    className='flex flex-col items-center space-y-6 text-center'
+                                    className='flex flex-col items-center space-y-10 text-center'
                                 >
-                                    <div className='relative'>
+                                    <div className='relative w-1/2'>
                                         <GatsbyImage
                                             image={image}
                                             alt={item.title}
                                             title={item.title}
-                                            className='w-24 h-24 sm:w-40 sm:h-40 rounded-xl shadow-2xl'
+                                            className='w-32 h-32 rounded-xl shadow-2xl'
                                         />
-                                        <h4 className='absolute text-left left-0 transform -translate-x-1/2 -translate-y-14 text-xs font-medium uppercase bg-yellow-300 p-2 rounded shadow'>
+                                        <h4 className='absolute text-left left-0 transform -translate-x-1/2 -translate-y-1/2 text-xs font-medium uppercase bg-yellow-300 p-2 rounded shadow'>
                                             {item.title}
                                         </h4>
                                     </div>
@@ -259,9 +259,9 @@ const Page = ({
                 </div>
             </section>
 
-            <section className='my-24 max-w-5xl mx-auto'>
+            <section className='my-24 max-w-5xl mx-auto px-6'>
                 <div className='flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-8'>
-                    <div className='max-w-md flex flex-col space-y-4 px-4'>
+                    <div className='max-w-md flex flex-col space-y-4'>
                         <h2 className='mb-8'>Nos consultants</h2>
                         <p>
                             L'ENSTA Paris consacre l'une des 3 majeures du
@@ -292,11 +292,11 @@ const Page = ({
 
             <CommentCaMarche />
 
-            <section className='my-24 max-w-5xl mx-auto'>
-                <h2 className='text-4xl font-bold text-center mb-4'>
+            <section className='my-24 max-w-5xl mx-auto px-6'>
+                <h2 className='text-4xl font-bold text-center mb-12'>
                     Nos plus belles études
                 </h2>
-                <div className='px-6'>
+                <div>
                     {examples && examples.length > 0 && (
                         <Carousel>
                             {examples.map((example, i) => (

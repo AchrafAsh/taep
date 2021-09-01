@@ -5,7 +5,7 @@ export default function ConsultantCard({ image, name, link }) {
     const picture = getImage(image)
 
     return (
-        <div className='flex flex-col shadow-lg w-min'>
+        <div className='flex flex-col shadow-lg w-min place-self-start'>
             <div className='w-40 h-40'>
                 <GatsbyImage image={picture} title={name} alt={name} />
             </div>
