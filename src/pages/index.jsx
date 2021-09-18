@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm'
 const HeroSection = () => (
     <section className='text-center flex flex-col space-y-12 items-center px-4 py-12 sm:p-20 max-w-5xl mx-auto'>
         <h1 className='text-white'>
-            L’Excellence Académique de l’ENSTA Paris au service des entreprise
+            L’Excellence Académique de l’ENSTA Paris au service des entreprises
         </h1>
         <p className='text-xl text-white'>
             Un réseau de +300 étudiants brillants et dynamiques pour vous
