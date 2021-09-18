@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { navigate } from 'gatsby'
 
 const Button = ({ text, svg }) => {
     const [isRevealed, setIsRevealed] = React.useState(false)
@@ -41,10 +42,13 @@ export default function CTAButtons() {
                 }
                 text='Parler avec un administrateur'
                 onClick={
-                    () => {} /* should open a calendly modal to book a call */
+                    () => {
+                        navigate('/contact')
+                    } /* TODO - open a calendly modal to book a call */
                 }
             />
             <Button
+                onClick={() => navigate('/contact')}
                 svg={
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
