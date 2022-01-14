@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+// import { StaticImage } from 'gatsby-plugin-image'
 
 export default function Card({ image, title, text, number, right }) {
     return (

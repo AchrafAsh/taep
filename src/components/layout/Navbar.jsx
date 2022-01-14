@@ -68,7 +68,7 @@ export default function Navbar() {
                     />
                 </li>
                 <li>
-                    <Link to='/'>Ecosystème</Link>
+                    <Link to='/ecosysteme'>Ecosystème</Link>
                 </li>
             </ul>
         </nav>
