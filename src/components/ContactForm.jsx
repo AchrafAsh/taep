@@ -11,6 +11,7 @@ export default function ContactForm() {
                 <div className='flex flex-col space-y-4'>
                     <a
                         target='_blank'
+                        rel='noreferrer noopener'
                         href='mailto:taep@ensta-paris.fr'
                         className='flex items-start space-x-2'
                     >
@@ -32,6 +33,7 @@ export default function ContactForm() {
                     </a>
                     <a
                         target='_blank'
+                        rel='noreferrer noopener'
                         href='https://www.linkedin.com/company/taep-ensta-paris/'
                         className='flex items-start space-x-2'
                     >

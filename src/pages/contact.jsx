@@ -64,16 +64,6 @@ const ContactPage = () => (
                         rows={4}
                         placeholder='Décrivez votre projet'
                     />
-                    <div className='flex flex-row space-x-2 items-center text-gray-400 font-light'>
-                        <input
-                            type='checkbox'
-                            name='robot'
-                            id='robot'
-                            className='shadow-inner bg-gray-50'
-                        />
-                        <label htmlFor='robot'>Je ne suis pas un robot</label>
-                    </div>
-
                     <input
                         className='bg-yellow-300 text-blue-900 px-8 py-2 cursor-pointer'
                         type='submit'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { navigate } from 'gatsby'
 
-const Button = ({ text, svg }) => {
+const Button = ({ text, svg, onClick }) => {
     const [isRevealed, setIsRevealed] = React.useState(false)
 
     function toggleReveal() {
@@ -12,6 +12,7 @@ const Button = ({ text, svg }) => {
         <button
             onMouseEnter={toggleReveal}
             onMouseLeave={toggleReveal}
+            onClick={onClick}
             className='p-4 bg-gray-100 rounded flex flex-row space-x-4'
         >
             {isRevealed ? <span className=''>{text}</span> : null}
@@ -41,14 +42,9 @@ export default function CTAButtons() {
                     </svg>
                 }
                 text='Parler avec un administrateur'
-                onClick={
-                    () => {
-                        navigate('/contact')
-                    } /* TODO - open a calendly modal to book a call */
-                }
+                onClick={() => navigate('/contact')}
             />
             <Button
-                onClick={() => navigate('/contact')}
                 svg={
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +62,7 @@ export default function CTAButtons() {
                     </svg>
                 }
                 text='Présenter mon projet'
-                onClick={() => {} /* should redirect to form */}
+                onClick={() => navigate('/contact')}
             />
         </nav>
     )
