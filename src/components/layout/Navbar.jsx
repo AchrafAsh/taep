@@ -67,9 +67,9 @@ export default function Navbar() {
                         }))}
                     />
                 </li>
-                <li>
+                {/* <li>
                     <Link to='/ecosysteme'>Ecosystème</Link>
-                </li>
+                </li> */}
             </ul>
         </nav>
     )
