@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { BgImage } from 'gbimage-bridge'
 
@@ -109,13 +109,13 @@ const CaseStudy = ({ image, title, description, tag, link }) => {
                             ))}
                         </div>
 
-                        <a
+                        {/* <a
                             className='flex items-baseline mt-3 text-yellow-300 hover:text-blue-900 focus:text-blue-900'
                             href={link}
                         >
                             <span>En savoir plus</span>
                             <span className='text-xs ml-1'>&#x279c;</span>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>
@@ -187,9 +187,11 @@ const Carousel = ({ children }) => {
 }
 
 const Page = ({
+    name,
     backgroundImage,
     header,
     subheader,
+    descriptionConsultant,
     consultants,
     skills,
     examples
@@ -214,9 +216,6 @@ const Page = ({
                         <div className='max-w-4xl mx-auto text-center px-4 py-12 sm:p-20'>
                             <h1 className='text-white mb-8'>{header}</h1>
                             <p className='text-lg text-white'>{subheader}</p>
-                            <button className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
-                                Télécharger la plaquette
-                            </button>
                         </div>
                     </div>
                 </BgImage>
@@ -263,20 +262,25 @@ const Page = ({
                 <div className='flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-8'>
                     <div className='max-w-md flex flex-col space-y-4'>
                         <h2 className='mb-8'>Nos consultants</h2>
-                        <p>
-                            L'ENSTA Paris consacre l'une des 3 majeures du
-                            cursus ingénieur ENSTA à l'Informatique (filière
-                            STIC) et dispense des cours de développement
-                            logiciel et de systèmes d'information,
-                            d'intelligence artificielle en 2ème et 3ème années.
-                        </p>
-                        <p>
-                            L'ENSTA Paris est classée 2ème grande école
-                            d'ingénieur en numérique, informatique et
-                            mathématiques. (Classement Le Figaro Etudiant 2021).
-                        </p>
+                        <>
+                            {descriptionConsultant ? (
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: descriptionConsultant
+                                            .childMarkdownRemark.html
+                                    }}
+                                />
+                            ) : (
+                                <p>
+                                    L'ENSTA Paris est classée 2ème grande école
+                                    d'ingénieur en numérique, informatique et
+                                    mathématiques. (Classement Le Figaro
+                                    Etudiant 2021).
+                                </p>
+                            )}
+                        </>
                     </div>
-                    <div className='p-4 flex-1 flex flex-row space-x-4 sm:space-x-0 overflow-x-auto sm:grid grid-cols-3 gap-4'>
+                    <div className='p-4 flex-1 flex flex-row items-stretch space-x-4 overflow-x-visible'>
                         {consultants &&
                             consultants.map((item, i) => (
                                 <ConsultantCard
@@ -291,6 +295,14 @@ const Page = ({
             </section>
 
             <CommentCaMarche />
+
+            <section className='max-w-max mx-auto -mt-12'>
+                <Link href={`/plaquettes/${name}.pdf`} target='_blank'>
+                    <div className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
+                        Télécharger la plaquette
+                    </div>
+                </Link>
+            </section>
 
             <section className='my-24 max-w-5xl mx-auto px-6'>
                 <h2 className='text-4xl font-bold text-center mb-12'>
@@ -323,21 +335,25 @@ const Page = ({
 
 export default function Expertise({ data }) {
     const {
+        name,
         backgroundImage,
         header,
         subheader,
         skills,
         consultants,
+        descriptionConsultant,
         examples
     } = data.expertise
 
     return (
         <Page
+            name={name}
             backgroundImage={backgroundImage}
             header={header}
             subheader={subheader}
             skills={skills}
             examples={examples}
+            descriptionConsultant={descriptionConsultant}
             consultants={consultants}
         />
     )
@@ -346,6 +362,7 @@ export default function Expertise({ data }) {
 export const query = graphql`
     query ($slug: String!) {
         expertise: contentfulExpertise(name: { eq: $slug }) {
+            name
             backgroundImage {
                 gatsbyImageData(
                     height: 2000
@@ -376,6 +393,11 @@ export const query = graphql`
                 }
                 name
                 link
+            }
+            descriptionConsultant {
+                childMarkdownRemark {
+                    html
+                }
             }
             examples {
                 title
