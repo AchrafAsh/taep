@@ -56,7 +56,9 @@ function SEO({ canonical, description, lang, meta, title }) {
                     content: `website`
                 }
             ].concat(meta)}
-        />
+        >
+            <link rel='icon' href='/logo_taep.png' type='image/png' />
+        </Helmet>
     )
 }
 
