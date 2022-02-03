@@ -64,7 +64,7 @@ const DemoSection = () => (
                 number={4}
                 image='/demo/eric_pilat.png'
                 title='Votre satisfaction'
-                text='“ L’équipe de TAEP a su répondre à mon besoin. Ils ont été réactifs du début à la fin et ont fait preuves d’initiatives pour surmonter les obstacles que nous avons rencontrés.”'
+                text='“ L’équipe de TAEP a su répondre à mon besoin. Ils ont été réactifs du début à la fin et ont fait preuve d’initiatives pour surmonter les obstacles que nous avons rencontrés.”'
             />
         </div>
     </section>
