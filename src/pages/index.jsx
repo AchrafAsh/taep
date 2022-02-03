@@ -12,7 +12,7 @@ const HeroSection = () => (
         </h1>
         <p className='text-xl text-white'>
             Un réseau de +300 étudiants brillants et dynamiques pour vous
-            accompagner dans tous vos projets autour du secteur Naval.
+            accompagner dans tous vos projets en lien avec l'ingénierie.
         </p>
         <Link to='/contact'>
             <button className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
