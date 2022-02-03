@@ -57,14 +57,14 @@ const DemoSection = () => (
                 number={3}
                 image='/demo/taep_team.png'
                 title='Un Chef de Projet qui vous accompagne'
-                text='Le rôle de notre chef de projet est de définir à vos côtés la méthodologie projet qui vous convient le mieux. De plus, il s’assurera que notre préstation réponde à vos besoins et vos exigences. C’est votre interlocuteur privilégié.'
+                text='Le rôle de notre chef de projet est de définir à vos côtés la méthodologie projet qui vous convient le mieux. De plus, il s’assurera que notre prestation réponde à vos besoins et vos exigences. C’est votre interlocuteur privilégié.'
             />
             <Card
                 right
                 number={4}
                 image='/demo/eric_pilat.png'
                 title='Votre satisfaction'
-                text='“ L’équipe de TAEP a su répondre à mon besoin. Ils ont étaient réactif du début à la fin et ont fait preuves d’initiatives pour surmonter les obstacles que nous avons rencontrés.”'
+                text='“ L’équipe de TAEP a su répondre à mon besoin. Ils ont été réactifs du début à la fin et ont fait preuves d’initiatives pour surmonter les obstacles que nous avons rencontrés.”'
             />
         </div>
     </section>
