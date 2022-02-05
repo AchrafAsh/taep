@@ -44,7 +44,10 @@ const ContactPage = () => (
                 <h1 className='text-4xl font-bold text-blue-1000 mb-8'>
                     Parlez nous de votre projet
                 </h1>
-                <form className='flex flex-col space-y-4'>
+                <form
+                    action='https://formspree.io/f/xoqrepey'
+                    className='flex flex-col space-y-4'
+                >
                     <input
                         className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
                         type='text'
@@ -83,7 +86,7 @@ const ContactPage = () => (
                     Réservez un appel
                 </h1>
                 {/* Calendly inline widget begin */}
-                <InlineWidget url='https://calendly.com/aitsidihammou-achraf' />
+                <InlineWidget url='https://calendly.com/taep' />
                 {/* Calendly inline widget end */}
             </div>
         </section>
