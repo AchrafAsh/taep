@@ -47,6 +47,7 @@ export default function ContactForm() {
                 <h2 className='text-4xl font-bold mb-8'>À votre tour</h2>
                 <form
                     action='https://formspree.io/f/xoqrepey'
+                    method='POST'
                     className='flex flex-col space-y-4'
                 >
                     <input

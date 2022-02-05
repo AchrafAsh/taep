@@ -46,6 +46,7 @@ const ContactPage = () => (
                 </h1>
                 <form
                     action='https://formspree.io/f/xoqrepey'
+                    method='POST'
                     className='flex flex-col space-y-4'
                 >
                     <input
