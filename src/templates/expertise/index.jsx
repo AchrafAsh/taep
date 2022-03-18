@@ -49,7 +49,7 @@ const CommentCaMarche = () => (
             <Step
                 number={2}
                 title='Notre Solution'
-                text='Dans les plus brefs délai, vous recevez une proposition détaillée: consultant, budget, délai et livrables'
+                text='Dans les plus brefs délais, vous recevez une proposition détaillée: intervenant, budget, délai et livrables'
             />
             <Arrow />
             <Step
