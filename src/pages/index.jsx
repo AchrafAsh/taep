@@ -50,8 +50,8 @@ const DemoSection = () => (
                 right
                 number={2}
                 image='/demo/pg.png'
-                title='Le consultant idéal'
-                text='Fort d’une césure chez Naval-Group, Pierre-Gwenäel connait parfaitement la culture du maritime. Il avait donc les ressources intellectuels et humaines pour accompagner notre client.'
+                title='L'intervenant idéal'
+                text='Fort d’une césure chez Naval-Group, Pierre-Gwenäel connait parfaitement la culture du maritime. Il avait donc les ressources intellectuelles et humaines pour accompagner notre client.'
             />
             <Card
                 number={3}
