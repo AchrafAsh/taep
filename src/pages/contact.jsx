@@ -28,7 +28,7 @@ const ContactPage = () => (
                 <p className='leading-8 text-white'>
                     taep@ensta-paris.fr
                     <br />
-                    +33 1 81 87 18 86
+                    /taep-ensta-paris
                 </p>
             </div>
 
