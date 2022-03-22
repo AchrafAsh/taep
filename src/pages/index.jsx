@@ -55,7 +55,7 @@ const DemoSection = () => (
             />
             <Card
                 number={3}
-                image='/demo/taep_team.png'
+                image='/demo/chefprojet.png'
                 title='Un Chef de Projet qui vous accompagne'
                 text='Le rôle de notre chef de projet est de définir à vos côtés la méthodologie projet qui vous convient le mieux. De plus, il s’assurera que notre prestation réponde à vos besoins et vos exigences. C’est votre interlocuteur privilégié.'
             />
