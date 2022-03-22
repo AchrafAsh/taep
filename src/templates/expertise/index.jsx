@@ -245,7 +245,7 @@ const Page = ({
                                             {item.title}
                                         </h4>
                                     </div>
-                                    <div className='max-w-xs px-8'>
+                                    <div className='max-w-xs px-50'>
                                         {item.description
                                             .split('\\n')
                                             .map((item, i) => (
