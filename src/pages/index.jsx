@@ -9,7 +9,7 @@ const HeroSection = () => (
     <section className='text-center flex flex-col space-y-12 items-center px-4 py-12 sm:p-20 max-w-5xl mx-auto'>
         <p style="background-image: url('../images/team_2022.png');">
         <h1 className='text-white'>
-            L’Excellence Académique de l’ENSTA Paris au service des entreprises
+            L’Excellence Académique de l’ENSTA Paris au service des entreprises !
         </h1>
         <p className='text-xl text-white'>
             Un réseau de +300 étudiants brillants et dynamiques pour vous
