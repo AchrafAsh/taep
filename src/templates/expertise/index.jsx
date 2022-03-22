@@ -223,7 +223,7 @@ const Page = ({
 
             <section className='my-24 max-w-5xl mx-auto'>
                 <h2 className='text-4xl font-bold mb-4 text-center'>
-                    Que pouvons-nous réaliser pour vous?
+                    Que pouvons-nous réaliser pour vous ?
                 </h2>
                 <div className='flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:space-x-10 px-6 py-8'>
                     {skills &&
