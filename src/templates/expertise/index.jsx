@@ -37,7 +37,7 @@ const Step = ({ number, title, text }) => (
 const CommentCaMarche = () => (
     <section className='my-24 px-6 max-w-5xl mx-auto'>
         <h2 className='text-4xl font-bold text-center mb-4'>
-            Comment ca marche
+            Comment ca marche ?
         </h2>
         <div className='w-full px-4 py-10 flex flex-col space-y-8 sm:space-y-0 sm:flex-row sm:space-x-8'>
             <Step
