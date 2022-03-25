@@ -45,7 +45,7 @@ const ContactPage = () => (
                     Parlez nous de votre projet
                 </h1>
                 <form
-                    action='https://docs.google.com/forms/d/e/1FAIpQLSeWbxjbnwMCEievSgnP3rosK6P-TlHxcvZb-EWN8eQBSbk_Mg/viewform?embedded=true'
+                    action='https://formspree.io/f/xoqrepey'
                     method='POST'
                     className='flex flex-col space-y-4'
                 >
