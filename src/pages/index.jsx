@@ -5,22 +5,31 @@ import { Link } from 'gatsby'
 import Card from '../components/home/Card'
 import ContactForm from '../components/ContactForm'
 
+const image = getImage('../images/team_taep.png')
+
 const HeroSection = () => (
     <section className='text-center flex flex-col space-y-12 items-center px-4 py-12 sm:p-20 max-w-5xl mx-auto'>
-        <div style="background-image: url('../images/team_2022.png');">
-        <h1 className='text-white'>
-            L’Excellence Académique de l’ENSTA Paris au service des entreprises !
-        </h1>
-        <p className='text-xl text-white'>
-            Un réseau de +300 étudiants brillants et dynamiques pour vous
-            accompagner dans tous vos projets en lien avec l'ingénierie.
-        </p>
-        <Link to='/contact'>
-            <button className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
-                Présenter mon projet
-            </button>
-        </Link>
-        </div>
+        <BgImage image={image}>
+                <div
+                    style={{
+                        background:
+                            'linear-gradient(180deg, #34304C 15.84%, rgba(52, 48, 76, 0.558279) 72.53%, rgba(52, 48, 76, 0.173205) 94.06%, rgba(52, 48, 76, 0) 100%)'
+                    }}
+                >
+                <h1 className='text-white'>
+                    L’Excellence Académique de l’ENSTA Paris au service des entreprises !!
+                </h1>
+                <p className='text-xl text-white'>
+                    Un réseau de +300 étudiants brillants et dynamiques pour vous
+                    accompagner dans tous vos projets en lien avec l'ingénierie.
+                </p>
+                <Link to='/contact'>
+                    <button className='mt-8 px-8 py-4 bg-yellow-300 text-blue-900'>
+                        Présenter mon projet
+                    </button>
+                </Link>
+            </div>
+        </BgImage>
     </section>
 )
 
