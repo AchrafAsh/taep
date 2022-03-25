@@ -57,7 +57,7 @@ export default function Navbar() {
                     />
                 </Link>
             </div>
-            <ul className='px-12 flex flex-row space-x-6 uppercase text-white font-light'>
+            <ul className='px-12 flex flex-row space-x-6 uppercase text-black font-light'>
                 <li>
                     <Dropdown
                         title='Spécialités'

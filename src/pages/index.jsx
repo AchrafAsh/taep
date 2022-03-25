@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm'
 const HeroSection = () => (
     <section className='text-center flex flex-col space-y-12 items-center px-4 py-12 sm:p-20 max-w-5xl mx-auto'>
         <h1 className='text-white'>
-            L’Excellence Académique de l’ENSTA Paris au service des entreprises !!
+            L’Excellence Académique de l’ENSTA Paris au service des entreprises !
         </h1>
         <p className='text-xl text-white'>
             Un réseau de +300 étudiants brillants et dynamiques pour vous
@@ -31,6 +31,21 @@ const BrandWall = () => (
             <StaticImage
                 src='../images/brand_wall.png'
                 alt='Entreprises'
+                placeholder='blurred'
+            />
+        </div>
+    </section>
+)
+
+const PartenaireWall = () => (
+    <section className='p-4 sm:p-12 text-center flex flex-col space-y-4 max-w-5xl mx-auto'>
+        <h2 className='my-8 text-gray-400'>
+            Nos partenaires
+        </h2>
+        <div className='w-full'>
+            <StaticImage
+                src='../images/partenaires.png'
+                alt='Partenaires'
                 placeholder='blurred'
             />
         </div>
@@ -76,6 +91,7 @@ const IndexPage = () => {
             <HeroSection />
             <div className='bg-white w-full'>
                 <BrandWall />
+                <PartenaireWall />
                 <DemoSection />
                 <ContactForm />
                 <Footer />
