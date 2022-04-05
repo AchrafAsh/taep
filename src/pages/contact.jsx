@@ -44,36 +44,7 @@ const ContactPage = () => (
                 <h1 className='text-4xl font-bold text-blue-1000 mb-8'>
                     Parlez nous de votre projet
                 </h1>
-                <form
-                    action='https://formspree.io/f/xoqrepey'
-                    method='POST'
-                    className='flex flex-col space-y-4'
-                >
-                    <input
-                        className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
-                        type='text'
-                        name='name'
-                        id='name'
-                        placeholder='Nom'
-                    />
-                    <input
-                        className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
-                        type='text'
-                        name='email'
-                        id='email'
-                        placeholder='Email'
-                    />
-                    <textarea
-                        className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
-                        rows={4}
-                        placeholder='Décrivez votre projet'
-                    />
-                    <input
-                        className='bg-yellow-300 text-blue-900 px-8 py-2 cursor-pointer'
-                        type='submit'
-                        value='Envoyer'
-                    />
-                </form>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWbxjbnwMCEievSgnP3rosK6P-TlHxcvZb-EWN8eQBSbk_Mg/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
             </div>
 
             <div className='px-6 lg:p-0 w-full max-w-xl flex flex-row space-x-8 items-center'>
