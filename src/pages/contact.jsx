@@ -46,7 +46,7 @@ const ContactPage = () => (
                 </h1>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWbxjbnwMCEievSgnP3rosK6P-TlHxcvZb-EWN8eQBSbk_Mg/viewform?embedded=true" width="640" height="677" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
                 <form
-                    action='https://formspree.io/f/xoqrepey'
+                    action='https://docs.google.com/forms/d/e/1FAIpQLSeWbxjbnwMCEievSgnP3rosK6P-TlHxcvZb-EWN8eQBSbk_Mg/viewform?embedded=true'
                     method='POST'
                     className='flex flex-col space-y-4'
                 >
