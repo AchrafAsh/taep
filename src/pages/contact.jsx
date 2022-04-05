@@ -41,7 +41,7 @@ const ContactPage = () => (
 
         <section className='flex-1 py-12 lg:p-20 flex flex-col space-y-12 justify-between items-center overflow-y-auto'>
             <div className='px-6 md:px-12'>
-                <h1 className='text-4xl font-bold text-blue-1000 mb-8'>
+                <h1 className='text-4xl text-center font-bold text-blue-1000 mb-8'>
                     Parlez nous de votre projet
                 </h1>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWbxjbnwMCEievSgnP3rosK6P-TlHxcvZb-EWN8eQBSbk_Mg/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
