@@ -46,37 +46,6 @@ export default function ContactForm() {
             <div className='flex-1 text-black'>
                 <h2 className='text-4xl font-bold mb-8'>À votre tour</h2>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWbxjbnwMCEievSgnP3rosK6P-TlHxcvZb-EWN8eQBSbk_Mg/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
-                /*
-                <form
-                    action='https://formspree.io/f/xoqrepey'
-                    method='POST'
-                    className='flex flex-col space-y-4'
-                >
-                    <input
-                        className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
-                        type='text'
-                        name='name'
-                        id='name'
-                        placeholder='Nom'
-                    />
-                    <input
-                        className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
-                        type='text'
-                        name='email'
-                        id='email'
-                        placeholder='Email'
-                    />
-                    <textarea
-                        className='py-2 px-4 bg-gray-50 shadow-inner border-2 border-gray-50 hover:border-yellow-300'
-                        placeholder='Décrivez votre projet'
-                    />
-                    <input
-                        className='bg-yellow-300 text-blue-900 px-8 py-2 cursor-pointer'
-                        type='submit'
-                        value='Envoyer'
-                    />
-                </form>
-                */
             </div>
         </section>
     )
